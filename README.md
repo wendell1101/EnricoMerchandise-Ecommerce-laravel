@@ -6,6 +6,5 @@ https://github.com/darryldecode/laravelshoppingcart/blob/master/src/Darryldecode
 2. Payment through Paypal or cash on delivery.
 3. Admin-panel using AdminLTEv3
 4.User roles and privelages - ('customer', 'product_manager', 'admin')
-5.Search functionality
-6. Product related to categories and labels.
+
 
