@@ -1,0 +1,30 @@
+.cart-btn{
+    transform: translate(0,-15px);
+}
+.cart-icon{
+    font-size:1.3rem;
+}
+.product-label{
+    transform: translate(0,10px);
+}
+.price{
+    font-size: 1rem!important;
+}
+.btn-save{
+    width:28px;
+    height:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:10px;
+}
+.cart-count{
+    transform: translate(-15px,-5px);
+}
+
+.shop-header{
+    background: rgb(222,242,242);
+background: linear-gradient(169deg, rgba(222,242,242,1) 0%, rgba(212,67,60,1) 100%);
+background: rgb(255,253,253);
+background: linear-gradient(11deg, rgba(255,253,253,1) 0%, rgba(217,217,217,1) 100%);
+}
