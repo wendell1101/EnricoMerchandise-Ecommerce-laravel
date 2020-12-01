@@ -36,10 +36,6 @@ class ShippingAddressController extends Controller
             'user_id' => auth()->id(),
         ];
 
-        if (ShippingAddress::all()->count() > 0) {
-            $oldShipping = ShippingAddress::first();
-            $oldShipping->delete();
-        }
         ShippingAddress::create($data);
         return redirect(route('checkouts.index'));
     }

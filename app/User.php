@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -22,6 +23,14 @@ class User extends Authenticatable
                 'source' => 'name'
             ]
         ];
+    }
+
+    //session
+    public function show(Request $request, $id)
+    {
+        $value = $request->session()->get('key');
+
+        //
     }
 
     //ui avatar

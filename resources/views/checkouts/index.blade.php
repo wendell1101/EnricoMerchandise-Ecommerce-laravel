@@ -18,7 +18,8 @@
     <section class="section">
         <div class="container">
 
-            <form class="row gap-y">
+            <form action="{{ route('orders.store') }}" method="POST" class="row gap-y">
+                @csrf
                 <div class="col-lg-8">
 
                     <table class="table table-cart">
@@ -40,10 +41,25 @@
                                 </td>
                             </tr>
                             @endforeach
+
                         </tbody>
+
                     </table>
 
-
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="payment_method">Choose Payment Method</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" name="payment_type" id="cod" 
+                                    value="cod" class="mr-2" checked="checked">Cash On Delivery
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" name="payment_type" id="paypal" value="paypal" class="mr-2">Paypal
+                            </div>
+                        </div>
+                    </div>
                     <hr class="my-8">
 
 
@@ -73,7 +89,7 @@
                             </div>
 
                             <div>
-                            <p class="fw-600">PHP {{number_format((float)$cartFinalTotal, 2, '.', '')}}</p>
+                                <p class="fw-600">PHP {{number_format((float)$cartFinalTotal, 2, '.', '')}}</p>
                             </div>
                         </div>
                     </div>
@@ -84,7 +100,9 @@
                         </div>
 
                         <div class="col-6">
-                            <a href="{{ route('billings.create') }}" class="btn btn-block btn-primary" type="submit">Checkout <i class="ti-angle-right fs-9"></i></a>
+                            <button class="btn btn-block btn-primary" type="submit">
+                                Checkout <i class="ti-angle-right fs-9"></i>
+                            </button>
                         </div>
                     </div>
 

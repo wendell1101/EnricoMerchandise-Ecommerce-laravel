@@ -23,6 +23,9 @@ Route::get('/remove/{product:id}', 'CartController@remove')->name('carts.remove'
 Route::get('/remove-to-cart/{product:id}', 'CartController@destroy')->name('carts.destroy');
 Route::put('/carts/update/{product:id}', 'CartController@update')->name('carts.update');
 
+Route::get('/orders/progress', 'OrderController@progress')->name('orders.progress');
+Route::post('/orders/store', 'OrderController@store')->name('orders.store');
+
 Route::middleware('auth')->group(function () {
     Route::get('/admin', 'HomeController@index')->name('home')->middleware(['admin_access']);
     Route::resource('users', 'UserController');

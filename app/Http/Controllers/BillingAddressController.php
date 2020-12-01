@@ -38,22 +38,10 @@ class BillingAddressController extends Controller
 
 
         if ($request->same_shipping) {
-            if (BillingAddress::all()->count() > 0) {
-                $oldBilling = BillingAddress::first();
-                $oldBilling->delete();
-            }
-            if (ShippingAddress::all()->count() > 0) {
-                $oldShipping = ShippingAddress::first();
-                $oldShipping->delete();
-            }
             BillingAddress::create($data);
             ShippingAddress::create($data);
             return redirect(route('checkouts.index'));
         } else {
-            if (BillingAddress::all()->count() > 0) {
-                $oldBilling = BillingAddress::first();
-                $oldBilling->delete();
-            }
             BillingAddress::create($data);
             return redirect(route('shippings.create'));
         }
