@@ -1,6 +1,6 @@
-*Project still on progress
+*Project still on progress*
 
-**Quick features
+**Quick features**
 1. Cart Functionality - credits to darryldecode/laravelshoppingcart
 https://github.com/darryldecode/laravelshoppingcart/blob/master/src/Darryldecode/Cart/Cart.php
 2. Payment through Paypal or cash on delivery.
