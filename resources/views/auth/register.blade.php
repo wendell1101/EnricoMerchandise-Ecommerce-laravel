@@ -18,12 +18,12 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a href="{{ url('/home') }}"><img src="{{ asset('img/logo-dark.png')}}" alt="logo" style="width:200px"></a>
     </div>
 
     <div class="card">
         <div class="card-body register-card-body">
-            <p class="login-box-msg">Register a new membership</p>
+            <p class="login-box-msg">Register here</p>
 
             <form method="post" action="{{ route('register') }}">
                 @csrf

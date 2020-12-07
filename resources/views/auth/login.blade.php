@@ -18,14 +18,14 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>{{ config('app.name') }}</b></a>
+        <a href="{{ url('/home') }}"><img src="{{ asset('img/logo-dark.png')}}" alt="logo" style="width:200px"></a>
     </div>
     <!-- /.login-logo -->
 
     <!-- /.login-box-body -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Login Here</p>
 
             <form method="post" action="{{ url('/login') }}">
                 @csrf

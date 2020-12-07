@@ -32,7 +32,7 @@
     background-size: cover;
     width: 300px!important;
     height: 360px!important;
-    background:rgb(241, 237, 237);
+    background:rgb(255, 255, 255);
     box-shadow:0 8px 15px rgb(187, 187, 190);
 
    
@@ -84,8 +84,9 @@
 }
 #btn-readmore{   
 
-    color:rgb(29, 29, 28);
-    border:1px solid#3c3d3c; 
+    color: #fff;
+    background-color: #3cd458;
+    border:1px solid#f1f6f1; 
     border-radius:15px;
     width:130px;
     height:40px;
@@ -95,8 +96,8 @@
     animation: appear 2.2s ease;
 }
 #btn-readmore:hover{
-    color:rgb(236, 236, 227);
-    background-color: #3cd458;
+    color:rgb(255, 255, 255);
+    background-color: #01ff30;
     border:1px solid#f1f6f1; 
     transition: color 0.5s, background-color 0.8s;
 }

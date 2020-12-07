@@ -6,10 +6,10 @@
 
 @if(!isset($category))
 @section('header')
-<header class="header text-center text-dark">
+<header class="header bg-gray text-center text-dark">
     @if($featured_products->count() > 0)
     <div class="container">
-    <h2 class="text-left text-light">Featured Products</h2>
+    <h4 class="text-left text-light">Featured Products</h4>
     </div>
     
     <div class="swiper-container w3-animate-left">
