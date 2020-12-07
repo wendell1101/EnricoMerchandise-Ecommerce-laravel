@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-6 ml-auto order-md-last mb-7 mb-md-0">
                     <span class="badge badge-pill badge-{{ $product->labelColor() }} badge-pos-left product-label">{{ $product->label->name }}</span>
-                    <img src="{{ asset('storage/' . $product->image ) }}" class="img-fluid" alt="image">
+                    <img src="{{ asset('storage/' . $product->image ) }}" class="img-fluid" alt="image" style="width:100%; min-height:250px!important">
                     <div class="row mt-3">
                         <div class="col">
                             <h4 class="text-dark">{{ $product->showPrice() }}</h4>
@@ -77,7 +77,7 @@
 |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 !-->
     @if($products->count() > 0)
-    <section class="section bg-gray bt-1" style="transform:translate(0,-100px)">
+    <section class="section bt-1" style="transform:translate(0,-100px)">
         <div class="container">
 
             <h4 class="mb-7">Similar products that you may like</h4>
