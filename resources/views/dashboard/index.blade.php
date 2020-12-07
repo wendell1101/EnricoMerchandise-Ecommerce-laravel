@@ -7,6 +7,7 @@
 @if(!isset($category))
 @section('header')
 <header class="header text-center text-dark">
+    @if($featured_products->count() > 0)
     <div class="container">
     <h2 class="text-left text-light">Featured Products</h2>
     </div>
@@ -15,7 +16,7 @@
         <!--header-->
 
         <div class="swiper-wrapper">
-            @forelse($featured_products as $product)
+            @foreach($featured_products as $product)
             <div class="swiper-slide">
                 <div class="imgBx">
                     <img src="{{ 'storage/'. $product->image }}" alt="image">
@@ -25,13 +26,12 @@
                 </div>
                 <a href="{{ route('shop-product.show', $product->slug) }}"><button id="btn-readmore">View Product</button></a>
             </div>
-            @empty
-            <h2>No featured product yet</h2>
-            @endforelse
+            @endforeach
 
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
+        @endif
 </header>
 
 
