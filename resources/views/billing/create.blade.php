@@ -29,8 +29,9 @@
                            <input type="submit" class="btn btn-success btn-sm float-right" value="Save">
                        </div>                       
                    </form>
-                   @endif
+                   
                    <p class="mb-3">Or</p>
+                   @endif
 
                     <h4 class="mb-6 mt-5">Fill up the following: </h4>
                     <form action="{{ route('billings.store') }}" method="POST">
