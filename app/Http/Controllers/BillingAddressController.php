@@ -16,7 +16,8 @@ class BillingAddressController extends Controller
 
     public function create()
     {
-        return view('billing.create');
+        $billing = auth()->user()->billing_addresses->last();
+        return view('billing.create', compact('billing'));
     }
 
     public function store(CreateBillingAddressRequest $request)
@@ -46,4 +47,29 @@ class BillingAddressController extends Controller
             return redirect(route('shippings.create'));
         }
     }
+
+    public function usePreviousAddress(Request $request)
+    {
+        if($request->previous_billing){
+            $billing = auth()->user()->billing_addresses->last();
+            $data = [
+                'first_name' => $billing->first_name,
+                'last_name' => $billing->last_name,
+                'email' => $billing->email,
+                'contact_number' => $billing->contact_number,
+                'house_number' => $billing->house_number,
+                'street' => $billing->street,
+                'barangay' => $billing->barangay,
+                'city' => $billing->city,
+                'province' => $billing->province,
+                'zip_code' => $billing->zip_code,
+                'country' => $billing->country,
+            ];
+            $billing->update($data);
+            $shipping = auth()->user()->shipping_addresses->last();
+            $shipping->update($data);
+            return redirect(route('checkouts.index'));
+        }
+    }
 }
+

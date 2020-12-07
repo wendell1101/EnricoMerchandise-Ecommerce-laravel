@@ -32,6 +32,7 @@ class CreateProductsTable extends Migration
             $table->float('price', 8,2);
             $table->string('description');
             $table->text('content');
+            $table->boolean('featured')->default(false);
             $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('label_id')->constrained('labels');
             $table->timestamps();

@@ -1,8 +1,5 @@
 @extends('layouts.base')
 
-@section('navbar')
-<x-navbar2 />
-@endsection
 
 @section('header')
 <header class="header bg-gray">
@@ -46,20 +43,6 @@
 
                     </table>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="payment_method">Choose Payment Method</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" name="payment_type" id="cod" 
-                                    value="cod" class="mr-2" checked="checked">Cash On Delivery
-                            </div>
-                            <div class="form-group">
-                                <input type="radio" name="payment_type" id="paypal" value="paypal" class="mr-2">Paypal
-                            </div>
-                        </div>
-                    </div>
                     <hr class="my-8">
 
 
@@ -94,17 +77,35 @@
                         </div>
                     </div>
 
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="payment_method">Choose Payment Method</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" name="payment_type" id="cod" 
+                                    value="cod" class="mr-2" checked="checked">Cash On Delivery
+                            </div>
+                            <div class="form-group">
+                                <input type="radio" name="payment_type" id="paypal" value="paypal" class="mr-2">Paypal
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col-6">
                             <a class="btn btn-block btn-secondary" href="{{ route('carts.index') }}">Revise Cart</a>
                         </div>
 
                         <div class="col-6">
-                            <button class="btn btn-block btn-primary" type="submit">
+                            <button class="btn btn-block btn-success" type="submit">
                                 Checkout <i class="ti-angle-right fs-9"></i>
                             </button>
                         </div>
                     </div>
+
+                    
 
                 </div>
             </form>

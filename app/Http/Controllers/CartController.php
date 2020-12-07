@@ -41,13 +41,13 @@ class CartController extends Controller
             ),
             'associatedModel' => $product,
         ));
-        return redirect(route('dashboard.index'));
+        return redirect()->back();
     }
 
     public function remove(Product $product)
     {
         \Cart::session(auth()->id())->remove($product->id);
-        return redirect(route('dashboard.index'));
+        return redirect()->back();
     }
 
     public function update(Request $request, Product $product)

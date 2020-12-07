@@ -1,10 +1,12 @@
 @extends('layouts.base')
 
-@section('navbar')
-<x-navbar2 />
-@endsection
 
 @section('header')
+<header class="header  text-dark" style="min-height:130px">
+    <div class="container">
+        <h1 class="text-light">Setup Shipping Address </h1>
+    </div>
+</header>
 @endsection
 @section('content')
 <!-- Main Content -->
@@ -15,11 +17,9 @@
 
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-
-
-                    <h5 class="mb-6">Set Up Shipping Address</h5>
                     <form action="{{ route('shippings.store') }}" method="POST">
                         @csrf
+                        <h5 class="text-light">Personal Information</h5>
                         <div class="form-row">
                             <div class="col-md-6 form-group">
                                 <input class="form-control" type="text" name="first_name" id="first_name"  class="form-control @error('first_name') is-Winvalid @enderror" placeholder="First name">
@@ -48,6 +48,10 @@
                                 @enderror
                             </div>
 
+                            <div class="col-12 form-group"> 
+                               <h5 class="text-light">Address Information</h5>
+                            </div>
+                            
                             <div class="col-md-6 form-group">
                                 <input class="form-control" type="text" name="house_number" id="house_number" value="{{ old('house_number') }}" class="form-control @error('house_number') is-invalid @enderror" placeholder="House Number">
                                 @error('house_number')

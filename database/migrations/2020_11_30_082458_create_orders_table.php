@@ -16,6 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
+            $table->json('products');            
             $table->string('transaction_id');
             $table->enum('status', ['created', 'paid', 'shipped', 'refunded']);
             $table->float('total_amount', 8, 2);

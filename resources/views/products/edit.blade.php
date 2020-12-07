@@ -80,6 +80,10 @@
                 @enderror
             </div>
             @endif
+            <div class="form-group">
+                <input type="checkbox" name="featured" id="featured"  @if($product->featured == 1) checked @endif>
+                <label for="featured">Featured</label>                
+            </div>
 
             <div class="form-group">               
                 <label for="image">Image</label>
@@ -93,7 +97,7 @@
 
             <div class="form-group d-flex justify-content-end">
                 <a href="{{ route('categories.index') }}" class="btn btn-secondary">Cancel</a>
-                <button type="submit" class="btn btn-primary ml-2">Create</button>
+                <button type="submit" class="btn btn-primary ml-2">Update</button>
             </div>
         </form>
     </div>

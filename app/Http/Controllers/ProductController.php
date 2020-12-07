@@ -13,11 +13,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        return $this->middleware('admin_or_product_manager');
-        return $this->middleware('has_category_and_label')->only('create');
-       
-        
-       
+        return $this->middleware('has_category_and_label')->only('create');       
     }
 
     /**
@@ -58,6 +54,9 @@ class ProductController extends Controller
      */
     public function store(CreateProductRequest $request)
     {      
+        if($request->featured){
+            $featured = true;
+        }
         $product = new Product();   
         $image = $product->storeImage($request->image);
         Product::create([
@@ -66,6 +65,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'description' => $request->description,
             'content' => $request->content,
+            'featured' => $featured,
             'category_id' => $request->category,
             'label_id' => $request->label,
         ]);
@@ -108,12 +108,19 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        // dd($request->all());
+   
         $product->slug = null;
-        $data = $request->only(['name', 'price', 'description', 'content', 'category_id', 'label_id']);
+        $data = $request->only(['name', 'price', 'description', 'content', 'featured','category_id', 'label_id']);
+        if($request->featured){           
+            $data['featured'] = true;
+        }else{
+            $data['featured'] = false;
+        }
+    
         if($request->hasFile('image')){  
             $product->deleteExistingImage();
             $data['image'] = $product->storeImage($request->image);
+         
         }
         $product->update($data);
         return redirect(route('products.index'))->with('success', 'A product has been updated');

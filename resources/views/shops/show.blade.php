@@ -1,8 +1,6 @@
 @extends('layouts.base')
 
-@section('navbar')
-<x-navbar />
-@endsection
+
 @section('header')
 <header class="header text-dark shop-header">
     <div class="container">
@@ -32,14 +30,25 @@
 
             <div class="row">
                 <div class="col-md-6 ml-auto order-md-last mb-7 mb-md-0">
-                <span class="badge badge-pill badge-{{ $product->labelColor() }} badge-pos-left product-label">{{ $product->label->name }}</span>
+                    <span class="badge badge-pill badge-{{ $product->labelColor() }} badge-pos-left product-label">{{ $product->label->name }}</span>
                     <img src="{{ asset('storage/' . $product->image ) }}" class="img-fluid" alt="image">
                     <div class="row mt-3">
                         <div class="col">
                             <h4 class="text-dark">{{ $product->showPrice() }}</h4>
                         </div>
                         <div class="col">
-                            <a class="btn btn-lg btn-success float-right" href="#">Add to cart</a>
+                            @if(Cart::session((auth()->user()) ? auth()->id() : '_token')->get($product->id))
+                            <a href="{{ route('carts.remove', $product->id) }}" class="btn btn-lg btn-danger float-right">Remove to cart</a>
+                            @else
+
+                            <form action="{{ route('carts.add', $product->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-lg btn-success float-right">Add to cart</button>
+                            </form>
+
+                            @endif
+
+                           
                         </div>
 
 
@@ -67,7 +76,7 @@
 | Similar products
 |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
 !-->
-@if($products->count() > 0)
+    @if($products->count() > 0)
     <section class="section bg-gray bt-1" style="transform:translate(0,-100px)">
         <div class="container">
 
@@ -93,7 +102,7 @@
 
         </div>
     </section>
-@endif
+    @endif
 
 
 </main>

@@ -2,18 +2,20 @@
 
 namespace App\View\Components;
 
+use App\Category;
 use Illuminate\View\Component;
 
 class Navbar2 extends Component
 {
+    public $categories = [];
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($categories)
     {
-        //
+        $this->categories = Category::all();
     }
 
     /**

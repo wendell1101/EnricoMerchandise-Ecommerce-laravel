@@ -1,8 +1,6 @@
 @extends('layouts.base')
 
-@section('navbar')
-<x-navbar2 />
-@endsection
+
 
 @section('header')
 @endsection

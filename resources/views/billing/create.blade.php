@@ -1,11 +1,15 @@
 @extends('layouts.base')
 
-@section('navbar')
-<x-navbar2 />
-@endsection
+
 
 @section('header')
+<header class="header  text-dark" style="min-height:130px">
+    <div class="container">
+        <h1>Setup Billing Address </h1>
+    </div>
+</header>
 @endsection
+
 @section('content')
 <!-- Main Content -->
 <main class="main-content">
@@ -15,12 +19,24 @@
 
             <div class="row">
                 <div class="col-lg-10 mx-auto">
+                    @if(auth()->user()->billing_addresses->count() > 0)
+                   <form action="{{ route('address.previous') }}" method="POST" class="border-bottom" style="margin-bottom:50px">
+                       @csrf
+                       <h4>Use previous information</h4>
+                       <div class="form-group">
+                           <input type="checkbox" name="previous_billing" id="previous_billing" required>
+                           <span class="text-lowercase">{{ $billing->getInfo() }}</span>
+                           <input type="submit" class="btn btn-success btn-sm float-right" value="Save">
+                       </div>                       
+                   </form>
+                   @endif
+                   <p class="mb-3">Or</p>
 
-
-                    <h5 class="mb-6">Set Up Billing Address</h5>
+                    <h4 class="mb-6 mt-5">Fill up the following: </h4>
                     <form action="{{ route('billings.store') }}" method="POST">
                         @csrf
-                        <div class="form-row">
+                        <h5 class="text-light">Personal Information</h5>
+                        <div class="form-row">                            
                             <div class="col-md-6 form-group">
                                 <input class="form-control" type="text" name="first_name" id="first_name"  class="form-control @error('first_name') is-Winvalid @enderror" placeholder="First name">
                                 @error('first_name')
@@ -46,6 +62,10 @@
                                 @error('contact_number')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror
+                            </div>
+
+                           <div class="col-12 form-group"> 
+                               <h5 class="text-light">Address Information</h5>
                             </div>
 
                             <div class="col-md-6 form-group">

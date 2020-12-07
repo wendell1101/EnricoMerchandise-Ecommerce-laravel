@@ -18,9 +18,18 @@ class Order extends Model
         ];
     }
 
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
+
     protected $fillable = [
-        'slug', 'transaction_id', 'status', 'total_amount', 'active', 
+        'products', 'slug', 'transaction_id', 'status', 'total_amount', 'active', 
         'user_id', 'billing_address_id', 'shipping_address_id'
+    ];
+
+    protected $casts = [
+        'products' => 'array',
     ];
 
     public function user(){
