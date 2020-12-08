@@ -1,4 +1,4 @@
-*Project still on progress*
+Full ecommerce application using Laravel 7 as server-side language
 
 **Quick features**
 - Cart Functionality - credits to darryldecode/laravelshoppingcart.
