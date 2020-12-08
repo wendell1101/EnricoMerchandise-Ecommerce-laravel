@@ -24,8 +24,6 @@ Route::get('/orders/{order}', 'OrderController@show')->name('orders.show');
 Route::post('/orders/store', 'OrderController@store')->name('orders.store');
 
 
-
-
 Route::get('/shop/category/{category}', 'ShopCategoryController@show')->name('shop-categories.show');
 
 
@@ -68,7 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/billing/store/previous', 'BillingAddressController@usePreviousAddress')->name('address.previous');
     Route::resource('shippings', 'ShippingAddressController');
 
-    Route::get('/checkout', 'CheckoutController@index')->name('checkouts.index');
+    Route::get('/checkout', 'CheckoutController@index')->name('checkouts.index')->middleware('cart_is_empty');
 
     Route::get('confirm-delete/category/{category}', 'CategoryController@confirmDelete')->name('categories.confirm-delete');
     Route::get('confirm-delete/label/{label}', 'LabelController@confirmDelete')->name('labels.confirm-delete');

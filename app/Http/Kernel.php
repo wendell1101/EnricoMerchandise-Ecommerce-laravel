@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CheckIfCartIsEmpty;
 use App\Http\Middleware\CheckIfHasCategoryAndLabel;
 use App\Http\Middleware\VerifyIfAdminOrProductManager;
 use App\Http\Middleware\CheckIFHasAdminAccess;
@@ -70,5 +71,6 @@ class Kernel extends HttpKernel
         'has_category_and_label' => CheckIfHasCategoryAndLabel::class,
         'admin' => VerifyIfAdmin::class,
         'admin_or_product_manager' => VerifyIfAdminOrProductManager::class,
+        'cart_is_empty' => CheckIfCartIsEmpty::class,
     ];
 }
