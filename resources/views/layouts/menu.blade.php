@@ -42,4 +42,10 @@
         <p>Payments</p>
     </a>
 </li>
+<li class="nav-item mt-3">
+    <a href="/" class="nav-link @if(Request::is('/')) active @else '' @endif">
+    <i class="nav-item fa fa-home"></i>
+        <p>Back to Client-side</p>
+    </a>
+</li>
 

@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
     //admin orders
     Route::get('/admin-orders', 'AdminOrderController@index')->name('admin-orders.index');
     Route::get('/admin-orders/{order:slug}', 'AdminOrderController@edit')->name('admin-orders.edit');
+    Route::get('/admin-orders-show/{order:slug}', 'AdminOrderController@show')->name('admin-orders.show');
     Route::put('/admin-orders/update/{order:slug}', 'AdminOrderController@update')->name('admin-orders.update');
     Route::delete('/admin-orders/destroy/{order:slug}', 'AdminOrderController@destroy')->name('admin-orders.destroy');
     Route::get('confirm-delete/order/{order}', 'AdminOrderController@confirmDelete')->name('admin-orders.confirm-delete');
@@ -78,3 +79,6 @@ Route::middleware('auth')->group(function () {
 
 
 Auth::routes();
+
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');

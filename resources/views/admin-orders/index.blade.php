@@ -28,7 +28,10 @@
                     @foreach($orders as $order)
                     <tr>
                         <th scope="row">{{ ++$loop->index }}</th>
-                        <td>{{ $order->transaction_id }}</td>
+                        <td>
+                            <a href="{{ route('admin-orders.show', $order->slug) }}">
+                            {{ $order->transaction_id }}</a>
+                        </td>
                         <td>
                            {{ $order->billing_address->first_name .' '. $order->billing_address->last_name}}
                         </td>

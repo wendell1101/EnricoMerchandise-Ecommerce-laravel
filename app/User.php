@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -49,7 +50,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'profile', 'role',
+        'name', 'email', 'google_id', 'password', 'profile', 'role',
     ];
 
     /**

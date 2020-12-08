@@ -39,7 +39,8 @@
                         <h5 class="text-light">Personal Information</h5>
                         <div class="form-row">                            
                             <div class="col-md-6 form-group">
-                                <input class="form-control" type="text" name="first_name" id="first_name"  class="form-control @error('first_name') is-Winvalid @enderror" placeholder="First name">
+                                <input class="form-control" type="text" name="first_name" id="first_name"  class="form-control @error('first_name') is-invalid @enderror" 
+                                value="{{ old('first_name') }}" placeholder="First name">
                                 @error('first_name')
                                 <span class="text-danger">{{ $message }}</span>
                                 @enderror

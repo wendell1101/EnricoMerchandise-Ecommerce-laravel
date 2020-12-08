@@ -25,7 +25,9 @@
     <!-- /.login-box-body -->
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Login Here</p>
+            <p class="login-box-msg">Login with</p>
+            <a href="{{ url('auth/google') }}" class="btn btn-light text-danger border-info btn-block">Google</a>
+            <p class="login-box-msg">Or </p>
 
             <form method="post" action="{{ url('/login') }}">
                 @csrf

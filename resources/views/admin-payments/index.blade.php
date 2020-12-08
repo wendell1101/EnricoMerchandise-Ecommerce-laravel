@@ -46,7 +46,7 @@
             </table>
         </div>
         @else
-        <h2 class="text-secondary text-center">No Product Yet</h2>
+        <h2 class="text-secondary text-center">No Payment Yet</h2>
         @endif
     </div>
 </div>

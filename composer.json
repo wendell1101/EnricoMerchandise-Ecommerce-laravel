@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^6.3",
         "infyomlabs/laravel-ui-adminlte": "2.0",
         "laravel/framework": "^7.0",
+        "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.0",
         "rackbeat/laravel-ui-avatars": "^0.9.0",
         "yajra/laravel-datatables-oracle": "~9.0"

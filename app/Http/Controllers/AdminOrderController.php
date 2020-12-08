@@ -23,6 +23,14 @@ class AdminOrderController extends Controller
         return view('admin-orders.edit', compact('order'));
     }
 
+    public function show(Order $order)
+    {
+        $date1 = $order->created_at;
+        $expected_delivery = date('Y-m-d-D', strtotime("+7 day", strtotime($date1)));
+        $order = json_decode($order);
+        return view('admin-orders.show', compact('order', 'expected_delivery'));
+    }
+
     public function update(Request $request, Order $order)
     {
         if($request->active === 'on'){
