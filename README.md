@@ -1,5 +1,7 @@
 Full ecommerce application using Laravel 7 as server-side language
 
+Demo Link: https://enrico-merchandise.herokuapp.com/
+
 **Quick features**
 - Cart Functionality - credits to darryldecode/laravelshoppingcart.
 https://github.com/darryldecode/laravelshoppingcart/blob/master/src/Darryldecode/Cart/Cart.php
