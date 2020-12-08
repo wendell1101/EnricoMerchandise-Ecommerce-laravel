@@ -33,7 +33,7 @@ return [
     'google' => [
         'client_id' => '94459855572-lhanoi7f08kqbd3ld0nl650e8agq6c9r.apps.googleusercontent.com',
         'client_secret' => 'UMSxcUW4aaKCYnTImGX9A66C',
-        'redirect' => 'http://localhost:8000/auth/google/callback',
+        'redirect' => 'https://enrico-merchandise.herokuapp.com/auth/google/callback',
     ],
 
 ];
