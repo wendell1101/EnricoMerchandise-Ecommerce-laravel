@@ -18,7 +18,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><img src="{{ asset('img/logo-dark.png')}}" alt="logo" style="width:200px"></a>
+            <a href="/"><img src="{{ asset('img/logo-dark.png')}}" alt="logo" style="width:200px"></a>
         </div>
         <!-- /.login-logo -->
 

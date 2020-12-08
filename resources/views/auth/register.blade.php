@@ -18,7 +18,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-        <a href="{{ url('/home') }}"><img src="{{ asset('img/logo-dark.png')}}" alt="logo" style="width:200px"></a>
+        <a href="/"><img src="{{ asset('img/logo-dark.png')}}" alt="logo" style="width:200px"></a>
     </div>
 
     <div class="card">

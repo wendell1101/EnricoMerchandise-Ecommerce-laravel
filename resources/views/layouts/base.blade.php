@@ -8,7 +8,7 @@
   <meta name="keywords" content="">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>@yield('title')</title>
+  <title>EnricoMerchandise</title>
 
   <!-- Styles -->
   <link rel="stylesheet" href="{{ asset('css/w3.css') }}">
