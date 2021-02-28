@@ -56,6 +56,8 @@ class ProductController extends Controller
     {      
         if($request->featured){
             $featured = true;
+        }else{
+            $featured = false;
         }
         $product = new Product();   
         $image = $product->storeImage($request->image);
