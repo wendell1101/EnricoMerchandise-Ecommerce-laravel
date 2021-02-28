@@ -41,11 +41,7 @@
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
-            <div class="form-group">
-                <input type="checkbox" name="featured" id="featured" value="{{ old('featured') }}">
-                <label for="featured">Featured</label>
-                
-            </div>
+            
 
             <!--categories -->
             @if($categories->count() > 0)
