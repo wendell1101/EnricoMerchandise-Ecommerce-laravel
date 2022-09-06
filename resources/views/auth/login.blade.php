@@ -27,10 +27,10 @@
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Login Here</p>
 
-                <a href="{{ url('auth/google') }}" class="border-info form-control text-center  text-info p-2">
+                <!-- <a href="{{ url('auth/google') }}" class="border-info form-control text-center  text-info p-2">
                 <i class="fab fa-google"></i> Login with Google
                 </a>
-                <p class="login-box-msg mt-2">Or </p>
+                <p class="login-box-msg mt-2">Or </p> -->
 
                 <form method="post" action="{{ url('/login') }}">
                     @csrf
