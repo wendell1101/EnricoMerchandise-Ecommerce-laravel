@@ -15,7 +15,7 @@ use App\Http\Controllers\Shop\ProductController;
 */
 
 Route::get('/', 'DashboardController@index')->name('dashboard.index');
-Route::get('/home', 'DashboardController@home')->name('dashboard.home');
+
 Route::get('/shop/products/{product:slug}', [ProductController::class, 'show'])->name('shop-product.show');
 
 

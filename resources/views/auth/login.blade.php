@@ -73,9 +73,9 @@
                     </div>
                 </form>
 
-                <p class="mb-1">
+                <!-- <p class="mb-1">
                     <a href="{{ route('password.request') }}">Forgot password?</a>
-                </p>
+                </p> -->
                 <p class="mb-0">
                     <span>Not yet registered? </span><a href="{{ route('register') }}" class="text-center">Register here</a>
                 </p>
