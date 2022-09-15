@@ -17,7 +17,7 @@
 
   <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
-  <script src="{{ asset('js/plugin.js') }}"></script>
+  <!-- <script src="{{ asset('js/plugin.js') }}"></script> -->
 
   <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}">
  
