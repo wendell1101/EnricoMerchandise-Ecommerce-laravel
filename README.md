@@ -9,3 +9,14 @@ https://github.com/darryldecode/laravelshoppingcart/blob/master/src/Darryldecode
 - Admin-panel using AdminLTEv3 (customized).
 - User roles and privelages - ('customer', 'product_manager', 'admin').&nbsp; 
 - Product related to categories and labels.&nbsp; 
+
+
+## Project setup
+-   Git clone https://github.com/wendell1101/coding_test.git
+-   Run `composer install` in the project root
+-   Create a new MySQL database named `backend_coding_test`
+-   Copy the `.env.example` file to a new file called `.env`
+-   Fill out the corresponding database values in the `.env` file
+-   Run `php artisan migrate` in the project root
+-   Run php artisan serve
+-   Open postman/any other platform and test the routes
