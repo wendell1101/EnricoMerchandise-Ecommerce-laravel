@@ -12,7 +12,7 @@ https://github.com/darryldecode/laravelshoppingcart/blob/master/src/Darryldecode
 
 
 ## Project setup
--   Git clone https://github.com/wendell1101/coding_test.git
+-   Git clone https://github.com/wendell1101/EnricoMerchandise-Ecommerce-laravel.git
 -   Run `composer install` in the project root
 -   Create a new MySQL database named `backend_coding_test`
 -   Copy the `.env.example` file to a new file called `.env`
