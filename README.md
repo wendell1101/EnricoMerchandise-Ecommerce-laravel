@@ -17,6 +17,7 @@ https://github.com/darryldecode/laravelshoppingcart/blob/master/src/Darryldecode
 -   Create a new MySQL database named `backend_coding_test`
 -   Copy the `.env.example` file to a new file called `.env`
 -   Fill out the corresponding database values in the `.env` file
+-   Run `php artisan key:generate` if prompted
 -   Run `php artisan migrate` in the project root
 -   Run php artisan serve
 -   Open postman/any other platform and test the routes
